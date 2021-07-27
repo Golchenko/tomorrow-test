@@ -1,0 +1,39 @@
+<h2>!!!</h2>
+
+{% schema %}
+{
+   "name": "Hero image",
+   "class": "hero-image",
+        "blocks": [
+            {
+            "type": "Image",
+            "name": "Hero block",
+            "limit": 2,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "hero_image",
+                    "label": "Hero image"
+                },
+                {
+                    "type": "text",
+                    "id": "link_text",
+                    "label": "Link text",
+                    "default": "Start Framing"
+                },
+                {
+                    "type": "url",
+                    "id": "hero_url",
+                    "label": "Hero link URL"
+                }
+            ]
+        }
+    ],
+   "presets": [
+        {
+           "category": "Image",
+           "name":"Image with text"
+        }
+    ]
+}
+{% endschema %}  
