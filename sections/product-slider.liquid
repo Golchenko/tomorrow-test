@@ -4,9 +4,9 @@
 
 {%- assign collection = collections[section.settings.collection] -%}
 
-<ul class="collection-slider__list">
+<ul class="product-slider__list">
     {% for product in collection.products limit: product_limit %}
-        <li class="collection-slider__item product-item">
+        <li class="product-slider__item product-item">
             <div class="product-item__image">
                 {%- if product.featured_image  != blank -%}
                     <img src="{{ product.featured_image | img_url: 'master' }}" alt="image for - {{product.title}}">
@@ -60,11 +60,3 @@
 }
 {% endschema %}  
 
-<script>
-$('.collection-slider__list').flickity({
-  cellAlign: 'left',
-  contain: true,
-  prevNextButtons: false,
-  pageDots: true
-});
-</script>
