@@ -43,10 +43,18 @@
 
       <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
         {%- unless section.settings.message_link == blank -%}
-          <a href="{{ section.settings.message_link }}" class="announcement-bar__link">
+          <a href="{{ section.settings.message_link }}" class="announcement-bar__link link-main">
         {%- endunless -%}
-            <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
+            <p class="announcement-bar__message message-main">{{ section.settings.message_text | escape }}</p>
         {%- unless section.settings.message_link == blank -%}
+          </a>
+        {%- endunless -%}
+
+        {%- unless section.settings.message_secondary_link == blank -%}
+          <a href="{{ section.settings.message_secondary_link }}" class="announcement-bar__link">
+        {%- endunless -%}
+            <p class="announcement-bar__message">{{ section.settings.message_secondary_text | escape }}</p>
+        {%- unless section.settings.message_secondary_link == blank -%}
           </a>
         {%- endunless -%}
       </div>
@@ -671,6 +679,17 @@
         "zh-CN": "可选",
         "zh-TW": "(選填)"
       }
+    },
+    {
+      "type": "text",
+      "id": "message_secondary_text",
+      "label": "Secondary text",
+      "default": "Questions? We got you."
+    },
+    {
+      "type": "url",
+      "id": "message_secondary_link",
+      "label": "Secondary message link"
     },
     {
       "type": "color",

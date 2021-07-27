@@ -1,0 +1,68 @@
+/*================ Color Variables ================*/
+:root {
+    --black: #040D09;
+    --white: #ffffff;
+}
+
+/*================ Fonts ================*/
+@font-face {
+    font-family: 'Akzidenz-Grotesk';
+    src: url('AkzidenzGroteskBQ-Reg.woff2') format('woff2'),
+        url('AkzidenzGroteskBQ-Reg.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akzidenz-Grotesk Medium';
+    src: url('AkzidenzGroteskBQ-Medium.woff2') format('woff2'),
+        url('AkzidenzGroteskBQ-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('Canela-Regular.woff2') format('woff2'),
+        url('Canela-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Header */
+.announcement-bar {
+    padding: 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.announcement-bar p,
+.announcement-bar a {
+    font-family: 'Akzidenz-Grotesk';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    color: var(--white);
+}
+
+.announcement-bar .message-main {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.site-header .site-nav__link--main {
+    font-family: 'Akzidenz-Grotesk Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+    padding: 3px 15px
+}
