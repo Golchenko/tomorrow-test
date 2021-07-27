@@ -1,4 +1,27 @@
-<h2>!!!</h2>
+<div class="hero-image__container">
+    <ul class="hero-image__list">
+        {% for block in section.blocks %}
+            <li class="hero-image__item">
+                {%- if block.settings.hero_image != blank -%}
+                    <img src="{{ block.settings.hero_image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
+                {%- else -%}
+                <span>
+                    {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                    {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </span>
+                {% endif %}
+                {%- if block.settings.link_title != blank and block.settings.link_url != blank -%}
+                    <a class="hero-image__link" href="{{ block.settings.link_url }}">
+                        <span class="hero-image__link-text">
+                            {{ block.settings.link_title }}
+                            {% render 'long-arrow-right' %}
+                        </span>
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% schema %}
 {
@@ -17,14 +40,20 @@
                 },
                 {
                     "type": "text",
-                    "id": "link_text",
-                    "label": "Link text",
+                    "id": "link_title",
+                    "label": "Link title",
                     "default": "Start Framing"
                 },
                 {
                     "type": "url",
-                    "id": "hero_url",
+                    "id": "link_url",
                     "label": "Hero link URL"
+                },
+                {
+                    "type": "color",
+                    "id": "link_color",
+                    "label": "Link title color",
+                    "default": "#ffffff"
                 }
             ]
         }
