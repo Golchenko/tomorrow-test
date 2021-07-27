@@ -1,5 +1,5 @@
 {%- if section.settings.heading != blank -%}
-    <h2>{{ section.settings.heading | escape }}</h2>
+    <h2 class="product-slider__heading">{{ section.settings.heading | escape }}</h2>
 {% endif %}
 
 {%- assign collection = collections[section.settings.collection] -%}
@@ -16,10 +16,10 @@
                 {% endif %}
             </div>
             <div class="product-item__info">
-                <p class="product-title">
+                <p class="product-item__title">
                     {{ product.title }}
                 </p>
-                <p class="product-price">
+                <p class="product-item__price">
                     <span>starting at </span>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
                 </p>
             </div>
@@ -62,8 +62,9 @@
 
 <script>
 $('.collection-slider__list').flickity({
-  // options
   cellAlign: 'left',
-  contain: true
+  contain: true,
+  prevNextButtons: false,
+  pageDots: true
 });
 </script>
