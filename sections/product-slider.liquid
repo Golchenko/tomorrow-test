@@ -16,9 +16,9 @@
                 {% endif %}
             </div>
             <div class="product-item__info">
-                <p class="product-item__title">
-                    {{ product.title }}
-                </p>
+                <a href="{{ product.selected_or_first_available_variant.url }}">
+                    <span class="product-item__title"> {{ product.title }}</span>
+                </a>
                 <p class="product-item__price">
                     <span>starting at </span>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
                 </p>
